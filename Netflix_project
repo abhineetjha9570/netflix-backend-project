@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import webbrowser
 class Netflix:
   def __init__(self):
@@ -151,3 +152,158 @@ Choose Your Choice
 Entertainment = Netflix()
 print(Entertainment) # Printing the object itself is not very informative here
 # print(Entertainment) # Printing the object itself is not very informative here
+=======
+import webbrowser
+class Netflix:
+  def __init__(self):
+    self.menu()
+
+  def menu(self):
+    while True:
+      user_input = input("""
+      Welcome ON Netflix
+      1.Enter 1 for Login
+        2.Enter 2 for Signup
+""")
+      if user_input == "1":
+        self.Login()
+      elif user_input == "2":
+        self.SignUp()
+      else:
+        print("Invalid input. Please try again.")
+
+  def SignUp(self):
+    self.username=int(input("phone no."))
+    if len(str(self.username))!=10:
+      print("Invalid phone number")
+      return
+    self.password=input("Create Password")
+    if len(str(self.password))<8:
+      print("Invalid Password")
+      return
+    has_digit=any(ch.isdigit() for ch in self.password)
+    has_upper=any(ch.isupper() for ch in self.password)
+    has_lower=any(ch.islower() for ch in self.password)
+    has_special=any(not ch.isalnum() for ch in self.password)
+    if has_digit and has_upper and has_lower and has_special:
+      print("Signup successful!")
+    else:
+      print("Invalid Password")
+      return
+
+  def Login(self):
+    self.userid=int(input("username:"))
+
+    self.password=input("password")
+
+    if self.userid==self.username and self.password==self.password:
+      print("Login Successful")
+    else:
+      print("Invalid Username or password")
+      return
+    self.entertainment_menu() # Call the entertainment menu after successful login
+
+  def entertainment_menu(self):
+      while True:
+        user_input = input("""
+Choose Your Choice
+1.Enter 1 for Music
+2.Enter 2 for Movie
+3.Enter 3 for webseries
+""")
+        if user_input == "1":
+          self.Music()
+        elif user_input == "2":
+          self.Movie()
+        elif user_input == "3":
+          self.Webseries()
+        
+        else:
+          print("Invalid input. Please try again.")
+
+  # You would need to define Music, Movie, and Webseries methods here
+  def Music(self):
+      while True:
+        user_input = input("""
+Choose Your Music Choice
+1.Enter 1 for Hindi Song
+2.Enter 2 for Old song
+3.Enter 3 for Bhojpuri
+4.Enter 4 for Back
+""")
+        if user_input == "1":
+          chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+          webbrowser.get(chrome_path).open("https://www.netflix.com")
+          return
+        elif user_input == "2":
+          chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+          webbrowser.get(chrome_path).open("https://www.netflix.com")
+          return
+        elif user_input == "3":
+          chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+          webbrowser.get(chrome_path).open("https://www.netflix.com")
+          return
+        elif user_input == "4":
+          break
+
+        else:
+          print("Invalid input. Please try again.")
+
+  def Movie(self):
+    while True:
+        user_input = input("""
+Choose Your Choice
+1.Enter 1 for Action
+2.Enter 2 for Drama
+3.Enter 3 for Romance
+4.Enter 4 for Back
+""")
+        if user_input == "1":
+          chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+          webbrowser.get(chrome_path).open("https://www.netflix.com")
+          return
+        elif user_input == "2":
+          chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+          webbrowser.get(chrome_path).open("https://www.netflix.com")
+          return
+        elif user_input == "3":
+          chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+          webbrowser.get(chrome_path).open("https://www.netflix.com")
+          return
+        elif user_input == "4":
+          break
+        else:
+          print("Invalid input. Please try again.")
+
+  def Webseries(self):
+    while True:
+        user_input = input("""
+Choose Your Choice
+1.Enter 1 for Romantice
+2.Enter 2 for Action
+3.Enter 3 for Drama
+4.Enter 4 for Back
+""")
+        if user_input == "1":
+          chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+          webbrowser.get(chrome_path).open("https://www.netflix.com")
+          return
+        elif user_input == "2":
+          chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+          webbrowser.get(chrome_path).open("https://www.netflix.com")
+          return
+        elif user_input == "3":
+          chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+          webbrowser.get(chrome_path).open("https://www.netflix.com")
+          return
+        elif user_input == "4":
+          break
+        else:
+          print("Invalid input. Please try again.")
+
+
+# Create an instance of the Netflix class to start the application
+Entertainment = Netflix()
+print(Entertainment) # Printing the object itself is not very informative here
+# print(Entertainment) # Printing the object itself is not very informative here
+>>>>>>> f7cb25bf61718e3162d2bc2342202d59c54e222b
